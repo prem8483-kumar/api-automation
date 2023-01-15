@@ -18,7 +18,7 @@ public class PetService {
     RequestSpecBuilder requestSpecBuilder;
 
     public PetService() {
-        requestSpecBuilder = new RequestSpecBuilder().setBaseUri(Constants.BASE_URL);
+        requestSpecBuilder = new RequestSpecBuilder().setBaseUri(Constants.PET_SERVICE_BASE_URL);
     }
 
     public Response createPet(String reqBody) {

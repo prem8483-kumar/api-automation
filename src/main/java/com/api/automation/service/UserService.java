@@ -19,7 +19,7 @@ public class UserService {
     RequestSpecBuilder requestSpecBuilder;
 
     public UserService() {
-        requestSpecBuilder = new RequestSpecBuilder().setBaseUri(Constants.BASE_URL);
+        requestSpecBuilder = new RequestSpecBuilder().setBaseUri(Constants.USER_SERVICE_BASE_URL);
     }
 
     public Response createUsers(String reqBody) {
