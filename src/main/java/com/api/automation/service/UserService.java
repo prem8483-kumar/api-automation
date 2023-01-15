@@ -10,7 +10,6 @@ import static io.restassured.RestAssured.given;
 
 public class UserService {
 
-
     String createUsersEndPoint = "/user/createWithArray";
     String updateUserByUserNameEndPoint = " /user/{userName}";
     String getUserByUserNameEndPoint = " /user/{userName}";
@@ -64,7 +63,6 @@ public class UserService {
 
         return response;
     }
-
 
     public Response getUserByUserName(String userName) {
 
