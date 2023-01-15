@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class User {
 
     @JsonProperty("id")
-    private Integer id;
+    private Long id;
 
     @JsonProperty("username")
     private String username;

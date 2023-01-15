@@ -14,7 +14,7 @@ public class PetDataProvider {
     @DataProvider(name = "updatePetData")
     public Object[][] updateUserData() {
         return new Object[][] {
-                {"/src/test/resources/pets/updatePet.json"},
+                {"/src/test/resources/pets/updatePet.json", "available"},
         };
     }
 

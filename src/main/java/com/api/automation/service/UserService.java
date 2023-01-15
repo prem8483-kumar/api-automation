@@ -1,6 +1,6 @@
 package com.api.automation.service;
 
-import com.api.automation.constant.EnvConstants;
+import com.api.automation.constant.Constants;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -19,7 +19,7 @@ public class UserService {
     RequestSpecBuilder requestSpecBuilder;
 
     public UserService() {
-        requestSpecBuilder = new RequestSpecBuilder().setBaseUri(EnvConstants.BASE_URL);
+        requestSpecBuilder = new RequestSpecBuilder().setBaseUri(Constants.BASE_URL);
     }
 
     public Response createUsers(String reqBody) {

@@ -19,13 +19,12 @@ public class PetTest {
     }
 
     @Test(description = "Update pet", dataProvider = "updatePetData", dataProviderClass = PetDataProvider.class)
-    public void testUpdatePet(String reqFilePath) throws IOException {
+    public void testUpdatePet(String reqFilePath, String petStatus) throws IOException {
 
         PetApiHelper petApiHelper = new PetApiHelper();
-        Response response = petApiHelper.updatePet(reqFilePath);
+        Response response = petApiHelper.updatePet(reqFilePath, petStatus);
 
-        PetValidation.validateUpdatePetResponse(response);
-
+        PetValidation.validateUpdatePetResponse(response, petStatus);
     }
 
     @Test(description = "Get pet by status", dataProvider = "getPetData", dataProviderClass = PetDataProvider.class)
@@ -34,6 +33,6 @@ public class PetTest {
         PetApiHelper petApiHelper = new PetApiHelper();
         Response response = petApiHelper.getPet(petStatus);
 
-        PetValidation.validateGetPetResponse(response);
+        PetValidation.validateGetPetResponse(response, petStatus);
     }
 }

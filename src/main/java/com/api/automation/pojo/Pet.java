@@ -17,7 +17,7 @@ import java.util.List;
 public class Pet {
 
     @JsonProperty("id")
-    private Integer id;
+    private Long id;
 
     @JsonProperty("category")
     private Category category;

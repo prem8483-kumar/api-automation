@@ -30,13 +30,14 @@ public class PetApiHelper {
 
     }
 
-    public Response updatePet(String reqFilePath) throws IOException {
+    public Response updatePet(String reqFilePath, String petStatus) throws IOException {
 
         reqFilePath = System.getProperty("user.dir") + reqFilePath;
         File reqFile = new File(reqFilePath);
 
         ObjectMapper objectMapper = new ObjectMapper();
         Pet pet = objectMapper.readValue(reqFile, Pet.class);
+        pet.setStatus(petStatus);
         String reqBody = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(pet);
 
         PetService petService = new PetService();

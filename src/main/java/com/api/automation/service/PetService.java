@@ -1,6 +1,6 @@
 package com.api.automation.service;
 
-import com.api.automation.constant.EnvConstants;
+import com.api.automation.constant.Constants;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -18,7 +18,7 @@ public class PetService {
     RequestSpecBuilder requestSpecBuilder;
 
     public PetService() {
-        requestSpecBuilder = new RequestSpecBuilder().setBaseUri(EnvConstants.BASE_URL);
+        requestSpecBuilder = new RequestSpecBuilder().setBaseUri(Constants.BASE_URL);
     }
 
     public Response createPet(String reqBody) {

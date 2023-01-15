@@ -3,6 +3,7 @@ package com.api.automation.test;
 import com.api.automation.data.UserDataProvider;
 import com.api.automation.helper.UserApiHelper;
 import com.api.automation.validation.UserValidation;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import java.io.IOException;
@@ -29,11 +30,11 @@ public class UserTest {
     }
 
     @Test(description = "Get user by user name", dataProvider = "getUserData", dataProviderClass = UserDataProvider.class)
-    public void testGetUserByUserName(String userName) {
+    public void testGetUserByUserName(String userName) throws JsonProcessingException {
 
         UserApiHelper userApiHelper = new UserApiHelper();
         Response response = userApiHelper.getUserByUserName(userName);
 
-        UserValidation.validateGetUserResponse(response);
+        UserValidation.validateGetUserResponse(response, userName);
     }
 }
