@@ -17,7 +17,7 @@ public class PetService {
 
     RequestSpecBuilder requestSpecBuilder;
 
-    PetService() {
+    public PetService() {
         requestSpecBuilder = new RequestSpecBuilder().setBaseUri(EnvConstants.BASE_URL);
     }
 
@@ -53,7 +53,7 @@ public class PetService {
         Response response = given(requestSpecification)
                 .log()
                 .all()
-                .post()
+                .put()
                 .then()
                 .log()
                 .all()
@@ -64,7 +64,7 @@ public class PetService {
     }
 
 
-    public Response getPetByStatusEndPoint(String status) {
+    public Response getPetByStatus(String status) {
 
         RequestSpecification requestSpecification = requestSpecBuilder
                 .setBasePath(getPetByStatusEndPoint)

@@ -7,14 +7,14 @@ public class PetDataProvider {
     @DataProvider(name = "createPetData")
     public Object[][] createUsersData() {
         return new Object[][] {
-                {"src/test/resources/pets/createPet.json"},
+                {"/src/test/resources/pets/createPet.json"},
         };
     }
 
     @DataProvider(name = "updatePetData")
     public Object[][] updateUserData() {
         return new Object[][] {
-                {"src/test/resources/pets/updatePet.json"},
+                {"/src/test/resources/pets/updatePet.json"},
         };
     }
 

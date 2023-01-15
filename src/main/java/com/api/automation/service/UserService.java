@@ -12,13 +12,13 @@ public class UserService {
 
 
     String createUsersEndPoint = "/user/createWithArray";
-    String updateUserNameEndPoint = " /user/{userName}";
+    String updateUserByUserNameEndPoint = " /user/{userName}";
     String getUserByUserNameEndPoint = " /user/{userName}";
 
 
     RequestSpecBuilder requestSpecBuilder;
 
-    UserService() {
+    public UserService() {
         requestSpecBuilder = new RequestSpecBuilder().setBaseUri(EnvConstants.BASE_URL);
     }
 
@@ -43,10 +43,10 @@ public class UserService {
         return response;
     }
 
-    public Response updateUserName(String userName, String reqBody) {
+    public Response updateUserByUserName(String userName, String reqBody) {
 
         RequestSpecification requestSpecification = requestSpecBuilder
-                .setBasePath(updateUserNameEndPoint)
+                .setBasePath(updateUserByUserNameEndPoint)
                 .addPathParam("userName", userName)
                 .setContentType(ContentType.JSON)
                 .setBody(reqBody)
@@ -55,7 +55,7 @@ public class UserService {
         Response response = given(requestSpecification)
                 .log()
                 .all()
-                .post()
+                .put()
                 .then()
                 .log()
                 .all()

@@ -1,6 +1,8 @@
 package com.api.automation.validation;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.restassured.response.Response;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import static org.junit.Assert.assertEquals;
@@ -29,6 +31,6 @@ public class PetValidation {
         assertEquals(200, response.getStatusCode());
 
         //Validate body
-        JSONObject responseObject = new JSONObject(response.asString());
+        JSONArray responseArray = new JSONArray(response.asString());
     }
 }

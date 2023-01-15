@@ -1,9 +1,7 @@
-package com.api.automation;
+package com.api.automation.constant;
 
 public class EnvConstants {
 
-    public static String BASE_URL = "https://petstore.swagger.io/";
-
-    public static String CONTENT_TYPE_JSON = "application/json";
+    public static String BASE_URL = "https://petstore.swagger.io/v2";
 
 }
