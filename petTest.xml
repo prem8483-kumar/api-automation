@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Pet Test Suite" verbose="1" >
+
+    <listeners>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener" />
+    </listeners>
+
+    <test name="Pet Test">
+        <groups>
+            <run>
+                <include name ="pet"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.api.automation.test.PetTest"/>
+        </classes>
+
+    </test>
+</suite>

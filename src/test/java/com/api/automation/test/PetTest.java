@@ -12,7 +12,7 @@ import java.io.IOException;
 public class PetTest {
     private static final Logger log = LogManager.getLogger(UserTest.class);
 
-    @Test(description = "Create pet", dataProvider = "createPetData", dataProviderClass = PetDataProvider.class)
+    @Test(groups = {"pet"}, description = "Create pet", dataProvider = "createPetData", dataProviderClass = PetDataProvider.class)
     public void testCreatePet(String reqFilePath) throws IOException {
 
         log.info("Create pet");
@@ -22,7 +22,7 @@ public class PetTest {
         PetValidation.validateCreatePetResponse(response);
     }
 
-    @Test(description = "Update pet", dataProvider = "updatePetData", dataProviderClass = PetDataProvider.class)
+    @Test(groups = {"pet"}, description = "Update pet", dataProvider = "updatePetData", dataProviderClass = PetDataProvider.class)
     public void testUpdatePet(String reqFilePath, String petStatus) throws IOException {
 
         log.info("Update pet status");
@@ -32,7 +32,7 @@ public class PetTest {
         PetValidation.validateUpdatePetResponse(response, petStatus);
     }
 
-    @Test(description = "Get pet by status", dataProvider = "getPetData", dataProviderClass = PetDataProvider.class)
+    @Test(groups = {"pet"}, description = "Get pet by status", dataProvider = "getPetData", dataProviderClass = PetDataProvider.class)
     public void testGetPet(String petStatus) {
 
         log.info("Get pet by status");

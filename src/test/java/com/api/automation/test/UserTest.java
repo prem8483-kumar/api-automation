@@ -13,7 +13,7 @@ import java.io.IOException;
 public class UserTest {
     private static final Logger log = LogManager.getLogger(UserTest.class);
 
-    @Test(description = "Create users", dataProvider = "createUsersData", dataProviderClass = UserDataProvider.class)
+    @Test(groups = {"user"}, description = "Create users", dataProvider = "createUsersData", dataProviderClass = UserDataProvider.class)
     public void testCreateUsers(String reqFilePath) throws IOException {
 
         log.info("Create users");
@@ -23,7 +23,7 @@ public class UserTest {
         UserValidation.validateCreateUsersResponse(response);
     }
 
-    @Test(description = "Update user by user name", dataProvider = "updateUserData", dataProviderClass = UserDataProvider.class)
+    @Test(groups = {"user"}, description = "Update user by user name", dataProvider = "updateUserData", dataProviderClass = UserDataProvider.class)
     public void testUpdateUserByUserName(String userName, String reqFilePath) throws IOException {
 
         log.info("Update user by user name");
@@ -34,7 +34,7 @@ public class UserTest {
 
     }
 
-    @Test(description = "Get user by user name", dataProvider = "getUserData", dataProviderClass = UserDataProvider.class)
+    @Test(groups = {"user"}, description = "Get user by user name", dataProvider = "getUserData", dataProviderClass = UserDataProvider.class)
     public void testGetUserByUserName(String userName) throws JsonProcessingException {
 
         log.info("Get user by user name");
