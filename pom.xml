@@ -82,6 +82,12 @@
     </dependency>
 
     <dependency>
+      <groupId>com.epam.reportportal</groupId>
+      <artifactId>logger-java-rest-assured</artifactId>
+      <version>5.2.2</version>
+    </dependency>
+
+    <dependency>
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
       <version>20220924</version>
@@ -105,8 +111,6 @@
       <version>5.9.1</version>
       <scope>test</scope>
     </dependency>
-
-
   </dependencies>
 
   <build>
@@ -142,6 +146,7 @@
             </properties>
             <suiteXmlFiles>
               <suiteXmlFile>userTest.xml</suiteXmlFile>
+              <suiteXmlFile>petTest.xml</suiteXmlFile>
             </suiteXmlFiles>
           </configuration>
         </plugin>

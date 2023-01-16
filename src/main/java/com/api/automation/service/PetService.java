@@ -8,7 +8,7 @@ import io.restassured.specification.RequestSpecification;
 
 import static io.restassured.RestAssured.given;
 
-public class PetService {
+public class PetService extends Service{
 
 
     String createPetEndPoint = "/pet";

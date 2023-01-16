@@ -8,12 +8,11 @@ import io.restassured.specification.RequestSpecification;
 
 import static io.restassured.RestAssured.given;
 
-public class UserService {
+public class UserService extends Service {
 
     String createUsersEndPoint = "/user/createWithArray";
     String updateUserByUserNameEndPoint = " /user/{userName}";
     String getUserByUserNameEndPoint = " /user/{userName}";
-
 
     RequestSpecBuilder requestSpecBuilder;
 

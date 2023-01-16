@@ -31,7 +31,6 @@ public class UserApiHelper {
 
     public Response updateUserByUserName(String userName, String reqFilePath) throws IOException {
 
-
         reqFilePath = System.getProperty("user.dir") + reqFilePath;
         File reqFile = new File(reqFilePath);
 

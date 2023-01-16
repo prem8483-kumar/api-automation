@@ -9,11 +9,13 @@
     <test name="Pet Test">
         <groups>
             <run>
+                <include name ="user"/>
                 <include name ="pet"/>
             </run>
         </groups>
 
         <classes>
+            <class name="com.api.automation.test.UserTest"/>
             <class name="com.api.automation.test.PetTest"/>
         </classes>
 
