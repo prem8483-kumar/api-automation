@@ -1,32 +1,37 @@
 package com.api.automation.unitTests;
 
 import com.api.automation.service.PetService;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 public class PetServiceTest {
 
-    @Test
-    public void testCreatePetWithValidRequest() throws IOException {
+    @ParameterizedTest
+    @ValueSource(strings = {"/src/test/resources/pets/createPet.json"})
+    public void testCreatePetWithValidRequest(String reqFilePath) throws IOException {
         PetService petService = new PetService();
-        Assert.assertNotNull(petService.createPet(new String(
-                Files.readAllBytes(Paths.get(System.getProperty("user.dir") + "/src/test/resources/pets/createPet.json")))));
+        assertNotNull(petService.createPet(new String(
+                Files.readAllBytes(Paths.get(System.getProperty("user.dir") + reqFilePath)))));
     }
 
-    @Test
-    public void testUpdatePetStatusWithValidRequest() throws IOException {
+    @ParameterizedTest
+    @ValueSource(strings = {"/src/test/resources/pets/updatePet.json"})
+    public void testUpdatePetStatusWithValidRequest(String reqFilePath) throws IOException {
         PetService petService = new PetService();
-        Assert.assertNotNull(petService.updatePetStatus(new String(
-                Files.readAllBytes(Paths.get(System.getProperty("user.dir") + "/src/test/resources/pets/updatePet.json")))));
+        assertNotNull(petService.updatePetStatus(new String(
+                Files.readAllBytes(Paths.get(System.getProperty("user.dir") + reqFilePath)))));
     }
 
-    @Test
-    public void testGetPetByStatusWithValidStatus() {
+    @ParameterizedTest
+    @ValueSource(strings = {"sold"})
+    public void testGetPetByStatusWithValidStatus(String petStatus) {
         PetService petService = new PetService();
-        Assert.assertNotNull(petService.getPetByStatus("sold"));
+        assertNotNull(petService.getPetByStatus(petStatus));
     }
 }

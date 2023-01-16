@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import static org.junit.Assert.assertEquals;
+import static org.testng.AssertJUnit.assertEquals;
 
 public class PetValidation {
     private static final Logger log = LogManager.getLogger(PetValidation.class);
